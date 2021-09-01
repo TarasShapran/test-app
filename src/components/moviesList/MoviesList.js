@@ -21,7 +21,7 @@ export default function MoviesList() {
         <div className={'moviesList'}>
 
                 {
-                    movies.map(value => <MoviesListElement key={value.id} item={value}/>)
+                    movies.map(value => <MoviesListElement key={value.id} {...value}/>)
                 }
 
 

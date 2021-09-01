@@ -1,14 +1,10 @@
 export default function Header() {
   return (
     <div className={'wrap'}>
-        <div></div>
-        <div></div>
-        <div>
-            <form >
-                <input type="text"/>
-                <input type="buttom"/>
-            </form>
-        </div>
+
+            <header className={"header"}>
+                <input className={'search'} type={'text'} placeholder={"Search..."}/>
+            </header>
 
     </div>
   );

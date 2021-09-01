@@ -1,3 +1,11 @@
-.wrap{
-    display: flex;
+
+.wrap {
+    background-color: #373b69;
+    height: 100px;
+}
+
+.header {
+
+    padding: 1rem;
+
 }
