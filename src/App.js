@@ -8,20 +8,22 @@ import {
     Link,
     withRouter
 } from "react-router-dom";
+import MovieInfo from "./components/movieInfo/MovieInfo";
 
 export default function App() {
 
     return (
         <Router>
             <div className="App">
-                {/*<Route path={'/header'} component={Header}/>*/}
-                {/*<Route path={'/movie-list'} component={MoviesList}/>*/}
-                {/*<Route path={'/movie-details'} component={MoviesList}/>*/}
-
                 <Header/>
-                <MoviesList/>
+
 
             </div>
+            <Switch>
+                {/*<Route path={'/header'} component={Header}/>*/}
+                <Route path={'/movie-list/:id'} component={MovieInfo}/>
+                <Route path={'/movie-list'} component={MoviesList}/>
+            </Switch>
         </Router>
     );
 }

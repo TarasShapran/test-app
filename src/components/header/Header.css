@@ -20,3 +20,8 @@
     border-radius: 50px ;
     padding: 0.3rem 0.7rem;
 }
+.navigate >a{
+
+    margin: 0 30px;
+    color: white;
+}

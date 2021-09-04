@@ -1,0 +1,25 @@
+.movie-wrap{
+    background-color: #22254b;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+.movie-wrap h2 , p{
+    position: absolute;
+}
+.movie-wrap h2{
+
+    top: 50px;
+    color: white;
+    width: 300px;
+    margin-left: 20px;
+    font-size: 40px;
+}
+.movie-wrap p{
+
+    top: 200px;
+    color: white;
+    width: 300px;
+    margin-left: 20px;
+    font-size: 40px;
+}

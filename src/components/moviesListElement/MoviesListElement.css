@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.MoviesListElement > img {
+.MoviesListElement  img {
     max-width: 100%;
 }
 

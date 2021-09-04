@@ -3,6 +3,14 @@ import {useDispatch} from "react-redux";
 import {searchMovieByName} from "../../service/movieService";
 import {search_Movie} from "../../redux/action/action";
 import {useState} from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+} from "react-router-dom";
+
 
 export default function Header() {
     let [formInput, setFormInput] = useState({search: ''});
@@ -17,9 +25,14 @@ export default function Header() {
     };
     return (
         <div className={'wrap'}>
-
+            <div className={'navigate'}>
+                <Link to={ '/movie-list'}>movies</Link>
+                <Link to={ '/movie-list'}>TV series</Link>
+            </div>
             <header className={"header"}>
+
                 <form onSubmit={onSubmit}>
+
                     <input className={'search'} type={'search'} name={'search'} placeholder={"Search..."}
                            onSubmit={onSubmit} onChange={onFormChange}/>
                 </form>

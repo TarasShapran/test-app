@@ -4,11 +4,19 @@ import {
     Switch,
     Route,
     Link,
-    withRouter
+    withRouter, useHistory
 } from "react-router-dom";
 
 export default function MoviesListElement({item}) {
-    let {title, poster_path, overview, vote_average} = item;
+    let {title, poster_path, overview, vote_average, id} = item;
+    let history = useHistory();
+    let navigate = () => {
+        history.push(
+            '/xxx/' + item.id,
+            item
+        )
+    };
+
     let setVoteClass = (vote) => {
         if (vote >= 8) {
             return 'green';
@@ -18,12 +26,11 @@ export default function MoviesListElement({item}) {
             return 'red'
         }
     };
-
     return (
         <div className={'MoviesListElement'}>
-            {/*<Link to={'/movie-details'}>*/}
-                <img src={'https://image.tmdb.org/t/p/w1280/' + poster_path} alt={title} />
-            {/*</Link>*/}
+            <Link to={{pathname: '/movie-list/' + id, state: item}}>
+                <img src={'https://image.tmdb.org/t/p/w1280/' + poster_path} alt={title} onClick={navigate}/>
+            </Link>
             <div className="movie-info">
                 <h3>{title}</h3>
                 <span className={'tag ' + setVoteClass(vote_average)}>{vote_average}</span>
