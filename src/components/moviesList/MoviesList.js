@@ -5,12 +5,11 @@ import {getDiscoverMovies} from "../../service/movieService";
 import MoviesListElement from "../moviesListElement/MoviesListElement";
 import './MoviesList.css'
 
-export default function MoviesList() {
-
+export default function MoviesList(props) {
+    console.log(props)
     let {movies} = useSelector(({movieReducer}) => movieReducer);
 
     let dispatch = useDispatch();
-
     useEffect(() => {
         getDiscoverMovies().then(({data: {results}}) => dispatch(get_Movies(results)))
 

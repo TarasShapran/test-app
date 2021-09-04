@@ -10,7 +10,7 @@ let url = {
 let axiosInstance = axios.create(url);
 
 const getDiscoverMovies = async () => await axiosInstance.get('/discover/movie')
-const getDiscoverMovieById = async (id) => await axiosInstance.get('/movie/'+id)
+const getDiscoverMovieById = async (id) => await axiosInstance.get('/movie/' + id)
 const searchMovieByName = async (name) => await axiosInstance.get('/search/movie?query=' + name)
-
-export {getDiscoverMovies, searchMovieByName,getDiscoverMovieById}
+const getGenres = async () => await axiosInstance.get('/genre/movie/list')
+export {getDiscoverMovies, searchMovieByName, getDiscoverMovieById, getGenres}

@@ -34,7 +34,7 @@ export default function Header() {
                 <form onSubmit={onSubmit}>
 
                     <input className={'search'} type={'search'} name={'search'} placeholder={"Search..."}
-                           onSubmit={onSubmit} onChange={onFormChange}/>
+                            onChange={onFormChange}/>
                 </form>
             </header>
 

@@ -9,6 +9,7 @@ import {
     withRouter
 } from "react-router-dom";
 import MovieInfo from "./components/movieInfo/MovieInfo";
+import Filter from "./components/filter/Filter";
 
 export default function App() {
 
@@ -16,7 +17,7 @@ export default function App() {
         <Router>
             <div className="App">
                 <Header/>
-
+                <Filter/>
 
             </div>
             <Switch>
