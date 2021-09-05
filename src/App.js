@@ -17,7 +17,7 @@ export default function App() {
         <Router>
             <div className="App">
                 <Header/>
-                <Filter/>
+
 
             </div>
             <Switch>

@@ -1,9 +1,25 @@
-export default function Genre({item}) {
+/*
+import {Chip} from "@material-ui/core";
+import './Genre.css'
+
+export default function Genre({item,color,addGenre}) {
+
+
+
+
     return (
-        <option value={item.id}>
-            {
-                item.name
-            }
-        </option>
+
+        <div>
+
+            <Chip label={item.name}
+                  clickable
+                  size={'small'}
+                  key={item.id}
+                  color={color}
+                  onClick={()=>addGenre(item)}
+            />
+        </div>
+
+
     );
-}
+}*/

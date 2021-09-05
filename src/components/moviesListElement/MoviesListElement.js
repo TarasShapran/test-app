@@ -4,18 +4,11 @@ import {
     Switch,
     Route,
     Link,
-    withRouter, useHistory
+    withRouter
 } from "react-router-dom";
 
 export default function MoviesListElement({item}) {
     let {title, poster_path, overview, vote_average, id} = item;
-    let history = useHistory();
-    let navigate = () => {
-        history.push(
-            '/xxx/' + item.id,
-            item
-        )
-    };
 
     let setVoteClass = (vote) => {
         if (vote >= 8) {
@@ -29,7 +22,7 @@ export default function MoviesListElement({item}) {
     return (
         <div className={'MoviesListElement'}>
             <Link to={{pathname: '/movie-list/' + id, state: item}}>
-                <img src={'https://image.tmdb.org/t/p/w1280/' + poster_path} alt={title} onClick={navigate}/>
+                <img src={'https://image.tmdb.org/t/p/w1280/' + poster_path} alt={title} />
             </Link>
             <div className="movie-info">
                 <h3>{title}</h3>
@@ -39,6 +32,7 @@ export default function MoviesListElement({item}) {
                 <h2>Overview:</h2>
                 <p>{overview}</p>
             </div>
+
         </div>
     );
 }
