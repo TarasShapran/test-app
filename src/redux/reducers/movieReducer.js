@@ -10,9 +10,11 @@ export const movieReducer = (state = {movies: []}, action) => {
         case SEARCH_MOVIES:
             return {...state, movies: [...action.payload]}
         case GET_MOVIE_BY_GENRE:
-            let filter = state.movies.filter(value => value.genre_ids===28);
-            console.log(filter)
-            return {...state, movies: [...action.payload]}
+            let filter = state.movies.filter(value => value.genre_ids.includes([18]));
+            console.log(filter);
+
+
+            return {...state}
         default:
             return state;
     }

@@ -1,37 +1,91 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {getGenres} from "../../service/movieService";
-import {get_Genres, search_MovieByGenre} from "../../redux/action/action";
-import Genre from "../genre/Genre";
-import {Link} from "react-router-dom";
+import {add_Genres, chose_Genres, get_Genres} from "../../redux/action/action";
+import '../genre/Genre.css'
+import {Chip} from "@material-ui/core";
 
-export default function Filter() {
+export default function Filter({selectedGenres, setSelectedGenres,year,setYear}) {
     let {genres} = useSelector(({filterReducer}) => filterReducer);
     let dispatch = useDispatch();
-    let [genreState, setGenreState] = useState('');
+    let [yearInp,setYearInp]=useState('');
+
+
+    const handleAdd = (item) => {
+        setSelectedGenres([...selectedGenres, item])
+        dispatch(chose_Genres(item))
+
+    }
+    const handleRemove = (genre) => {
+        setSelectedGenres(
+            selectedGenres.filter((selected) => selected.id !== genre.id)
+        );
+        dispatch(add_Genres(genre))
+
+    };
+
 
     useEffect(() => {
-        getGenres().then(({data: {genres}}) => dispatch(get_Genres(genres))
+        getGenres().then(({data: {genres}}) => {
+
+                return dispatch(get_Genres(genres))
+            }
         )
     }, [])
 
-    return (
-        <div>
-            <select
-                onChange={(e) => {
-                    const selectedFood = e.target.value;
-                    setGenreState(selectedFood);
 
-                }}>
-                {/*<Link to={{pathname: '/movie-list', state: genreState}}>
-                </Link>*/}
+    let onChangeYear=(e)=>{
+        e.preventDefault()
+        setYearInp(e.target.value);
+    };
+    let onSaveYear=(e)=>{
+        e.preventDefault()
+        setYear(yearInp)
+    };
+    return (
+        <div className={"filterWrap"}>
+            <div className={'genre-wrap'}>
+                {
+                    selectedGenres && selectedGenres
+                        .map(value =>
+                            <Chip
+                                style={{margin: 2}}
+                                className={'chipComp'}
+                                label={value.name}
+                                clickable
+                                size={'small'}
+                                key={value.id}
+                                color={'primary'}
+                                onDelete={() => handleRemove(value)}
+                            />)
+                }
 
                 {
-                        genres.map(val => <Genre key={val.id} item={val}/>)
-                    }
-            </select>
+                    genres && genres.map(value => <Chip
+                        style={{margin: 2}}
+                        className={'chipComp'}
+                        label={value.name}
+                        clickable
+                        size={'small'}
+                        key={value.id}
+                        onClick={() => handleAdd(value)}
+
+                    />)
+                }
 
 
-        < /div>
+            < /div>
+            <div className="choseYear">
+                <form onSubmit={onSaveYear}>
+                    <input className={'setYear'}
+                           type="number"
+                           value={yearInp}
+                           onChange={onChangeYear}
+                            placeholder={"Enter Year"}
+                    />
+                </form>
+            </div>
+            
+        </div>
     );
 }

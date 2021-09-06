@@ -1,0 +1,19 @@
+.genre-wrap{
+    display: flex;
+    padding: 6px 0;
+    flex-wrap: wrap;
+
+}
+.filterWrap{
+
+}
+.setYear {
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 2px solid #22254b;
+    color: #22254b;
+    border-radius: 50px ;
+    padding: 0.3rem 0.7rem;
+    margin: 10px 0;
+}

@@ -26,6 +26,7 @@ export default function Header() {
     return (
         <div className={'wrap'}>
             <div className={'navigate'}>
+                <Link to={ '/'}>home</Link>
                 <Link to={ '/movie-list'}>movies</Link>
                 <Link to={ '/movie-list'}>TV series</Link>
             </div>
