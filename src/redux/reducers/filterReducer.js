@@ -8,7 +8,6 @@ export const filterReducer = (state = {genres: []}, action) => {
         case CHOSE_GENRES:
             return {...state, genres: [...state.genres.filter(value => value.id !== action.payload.id)]}
         case ADD_GENRE:
-
             return {...state, genres: [...state.genres, action.payload]}
         default :
             return state;

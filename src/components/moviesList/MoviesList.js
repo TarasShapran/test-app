@@ -12,27 +12,32 @@ export default function MoviesList() {
     const {movies} = useSelector(({movieReducer}) => movieReducer);
     let [selectedGenres, setSelectedGenres] = useState([]);
 
+    let [year,setYear]=useState('');
+
+
     let dispatch = useDispatch();
     let useGenre1 = useGenre(selectedGenres);
 
     useEffect(() => {
-        getDiscoverMovies(1, useGenre1).then(({data: {results}}) => dispatch(get_Movies(results)))
-    }, [useGenre1])
+        getDiscoverMovies(1, useGenre1,year).then(({data: {results}}) => dispatch(get_Movies(results)))
+    }, [useGenre1,year])
 
 
     return (
         <div>
-            <Filter selectedGenres={selectedGenres}
-                    setSelectedGenres={setSelectedGenres}
-            />
-            <div className={'moviesList'}>
+            <div className={'filterDiv'}>
+                <Filter selectedGenres={selectedGenres}
+                        setSelectedGenres={setSelectedGenres}
+                        year={year}
+                        setYear={setYear}
+                />
 
+            </div>
+            <div className={'moviesList'}>
                 {
                     movies.map(value => <MoviesListElement key={value.id} item={value}/>)
 
                 }
-
-
             </div>
         </div>
     );

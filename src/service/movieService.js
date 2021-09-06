@@ -9,8 +9,10 @@ let url = {
 }
 let axiosInstance = axios.create(url);
 
-const getDiscoverMovies = async (page,genres) => await axiosInstance.get(`/discover/movie?page=${page}&with_genres=${genres}`)
+const getDiscoverMovies = async (page,genres,year) => await axiosInstance.get(`/discover/movie?page=${page}&with_genres=${genres}&year=${year}`)
 const getDiscoverMovieById = async (id) => await axiosInstance.get('/movie/' + id)
 const searchMovieByName = async (name) => await axiosInstance.get('/search/movie?query=' + name)
 const getGenres = async () => await axiosInstance.get('/genre/movie/list')
-export {getDiscoverMovies, searchMovieByName, getDiscoverMovieById, getGenres}
+const getTrending = async (page) => await axiosInstance.get(`/trending/all/week?page=${page}`)
+const getPopularMovie = async () => await axiosInstance.get('/genre/movie/list/sort_by')
+export {getDiscoverMovies, searchMovieByName, getDiscoverMovieById, getGenres, getTrending}
