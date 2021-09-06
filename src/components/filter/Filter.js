@@ -2,7 +2,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {getGenres} from "../../service/movieService";
 import {add_Genres, chose_Genres, get_Genres} from "../../redux/action/action";
-import Genre from "../genre/Genre";
 import '../genre/Genre.css'
 import {Chip} from "@material-ui/core";
 
