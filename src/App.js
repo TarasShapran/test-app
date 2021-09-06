@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import MovieInfo from "./components/movieInfo/MovieInfo";
 import Trending from "./components/trending/Trending";
+import './App.css'
 
 export default function App() {
 

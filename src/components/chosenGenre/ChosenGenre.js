@@ -1,3 +1,4 @@
+/*
 export default function ChosenGenre() {
   return (
     <div>
@@ -5,4 +6,4 @@ export default function ChosenGenre() {
 
     </div>
   );
-}
+}*/

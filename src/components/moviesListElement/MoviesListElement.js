@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 export default function MoviesListElement({item}) {
-    let {title, poster_path, overview, vote_average, id} = item;
+    let {title,name, poster_path, overview, vote_average, id} = item;
 
     let setVoteClass = (vote) => {
         if (vote >= 8) {
@@ -25,7 +25,7 @@ export default function MoviesListElement({item}) {
                 <img src={'https://image.tmdb.org/t/p/w1280/' + poster_path} alt={title} />
             </Link>
             <div className="movie-info">
-                <h3>{title}</h3>
+                <h3>{title||name}</h3>
                 <span className={'tag ' + setVoteClass(vote_average)}>{vote_average}</span>
             </div>
             <div className="movie-overview">

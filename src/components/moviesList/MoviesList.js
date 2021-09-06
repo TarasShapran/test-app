@@ -6,11 +6,15 @@ import MoviesListElement from "../moviesListElement/MoviesListElement";
 import './MoviesList.css'
 import Filter from "../filter/Filter";
 import useGenre from "../../hooks/useGenre";
+import CustomPagination from "../pagination/CustomPagination";
 
 
 export default function MoviesList() {
     const {movies} = useSelector(({movieReducer}) => movieReducer);
     let [selectedGenres, setSelectedGenres] = useState([]);
+
+    let [page,setPage] = useState(1);
+
 
     let [year,setYear]=useState('');
 
@@ -19,8 +23,8 @@ export default function MoviesList() {
     let useGenre1 = useGenre(selectedGenres);
 
     useEffect(() => {
-        getDiscoverMovies(1, useGenre1,year).then(({data: {results}}) => dispatch(get_Movies(results)))
-    }, [useGenre1,year])
+        getDiscoverMovies(page, useGenre1,year).then(({data: {results}}) => dispatch(get_Movies(results)))
+    }, [useGenre1,year,page])
 
 
     return (
@@ -39,6 +43,10 @@ export default function MoviesList() {
 
                 }
             </div>
+            <CustomPagination
+                setPage={setPage}
+
+            />
         </div>
     );
 }

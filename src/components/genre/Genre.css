@@ -1,12 +1,11 @@
 .genre-wrap{
     display: flex;
     padding: 6px 0;
-    max-width: 400px;
     flex-wrap: wrap;
 
 }
 .filterWrap{
-    display: flex;
+
 }
 .setYear {
     font-family: inherit;
@@ -16,5 +15,5 @@
     color: #22254b;
     border-radius: 50px ;
     padding: 0.3rem 0.7rem;
-    margin: 10px;
+    margin: 10px 0;
 }
