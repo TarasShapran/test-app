@@ -2,10 +2,11 @@
     display: flex;
     padding: 6px 0;
     flex-wrap: wrap;
+    width: 70%;
 
 }
 .filterWrap{
-
+    display: flex;
 }
 .setYear {
     font-family: inherit;

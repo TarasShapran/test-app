@@ -2,7 +2,7 @@ import './MovieInfo.css'
 
 export default function MovieInfo({location: {state}}) {
     let {title, backdrop_path, tagline, overview, name, first_air_date, release_date} = state
-
+    console.log(state)
     return (
         <div className={'movie-wrap'}>
             <div className={'movie-wrap-s'}>

@@ -11,6 +11,7 @@ import {
 import MovieInfo from "./components/movieInfo/MovieInfo";
 import Trending from "./components/trending/Trending";
 import './App.css'
+import LoginForm from "./components/loginForm/LoginForm";
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
             </div>
             <Switch>
 
+                <Route path={'/login'} component={LoginForm}/>
                 <Route path={'/movie-list/:id'} component={MovieInfo}/>
                 <Route path={'/movie-list'} component={MoviesList}/>
                 <Route path={'/'} component={Trending}/>

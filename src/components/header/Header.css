@@ -16,8 +16,19 @@
     border-radius: 50px ;
     padding: 0.3rem 0.7rem;
 }
-.navigate >a{
-
+.navigate , .form-search{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.user-link{
+    position: absolute;
+    left: 50px;
+}
+.navigate >a , .user-link{
+    text-decoration: none;
     margin: 0 30px;
     color: white;
+
 }
+
