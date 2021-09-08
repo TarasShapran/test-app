@@ -6,6 +6,9 @@ import {
     Link,
     withRouter
 } from "react-router-dom";
+
+import './Login-form.css'
+
 export default function LoginForm() {
     let [formInput, setFormInput] = useState({email: '', password: '', username: '', submit: ''});
     let [users, setUsers] = useState([]);
@@ -20,14 +23,16 @@ export default function LoginForm() {
     };
 
     return (
-        <div>
+        <div className={"login-form-wrap"}>
+
             <form onSubmit={onSave}>
-                <input type="email" name={'email'} value={formInput.email} onChange={onChangeForm}/>
-                <input type="password" name={'password'} value={formInput.password} onChange={onChangeForm}/>
-                <input type="username" name={'username'} value={formInput.username} onChange={onChangeForm}/>
-                <Link to={'/'}>
+                <div>
+                    <input type="email" name={'email'} value={formInput.email} onChange={onChangeForm}/></div>
+                <div><input type="password" name={'password'} value={formInput.password} onChange={onChangeForm}/></div>
+                <div><input type="username" name={'username'} value={formInput.username} onChange={onChangeForm}/></div>
+                <div className={"button"}><Link to={'/'}>
                     <input type="submit"/>
-                </Link>
+                </Link></div>
             </form>
 
         </div>

@@ -2,12 +2,13 @@
     background-color: #22254b;
     max-width: 100%;
 }
-.movie-wrap-s{
+/*.movie-wrap-s{
     margin: 0 10%;
-}
+}*/
 .content_Img{
     object-fit: contain;
     border-radius: 10px;
+    width: 100%;
 }
 .ContentModal__landscape {
     object-fit: contain;
