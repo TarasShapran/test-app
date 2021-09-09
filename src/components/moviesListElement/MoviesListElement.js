@@ -29,7 +29,7 @@ export default function MoviesListElement({item}) {
                 <span className={'tag ' + setVoteClass(vote_average)}>{vote_average}</span>
             </div>
             <div className="movie-overview">
-                <h2>Overview:</h2>
+                <h3>Overview:</h3>
                 <p>{overview}</p>
             </div>
 
